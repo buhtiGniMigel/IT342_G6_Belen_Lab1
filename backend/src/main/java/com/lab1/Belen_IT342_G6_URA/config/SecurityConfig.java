@@ -1,0 +1,35 @@
+package com.lab1.Belen_IT342_G6_URA.config;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+// The missing imports below are why you see red errors:
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.config.Customizer;
+
+@Configuration
+@EnableWebSecurity
+public class SecurityConfig {
+
+    // Requirement: Password encryption (BCrypt)
+    @Bean
+    public BCryptPasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
+
+    @Bean
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+        http
+                .csrf(csrf -> csrf.disable()) // Disable for development/React testing
+                .authorizeHttpRequests(auth -> auth
+                        .requestMatchers("/api/auth/**").permitAll() // Registration/Login is public
+                        .requestMatchers("/api/user/me").authenticated() // Requirement: GET /api/user/me is protected
+                        .anyRequest().permitAll()
+                )
+                .httpBasic(Customizer.withDefaults()); // Standard for Lab 2
+
+        return http.build();
+    }
+}

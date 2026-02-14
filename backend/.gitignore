@@ -1,0 +1,51 @@
+# Dependency Directories (CRITICAL for speed)
+node_modules/
+target/
+bin/
+build/
+out/
+
+# Spring Boot & Maven
+HELP.md
+.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+# Logs and Runtime
+*.log
+*.tmp
+*.temp
+
+# IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+cmake-build-*/
+
+# VS Code
+.vscode/
+.history/
+*.code-workspace
+
+# STS (Spring Tool Suite)
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# OS Specific
+.DS_Store
+Thumbs.db

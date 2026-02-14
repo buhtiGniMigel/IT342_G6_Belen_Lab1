@@ -1,0 +1,98 @@
+/* src/App.css */
+body {
+  margin: 0;
+  padding: 0;
+  background: #0f172a; /* Deep midnight blue */
+  background-image: radial-gradient(circle at top right, #1e293b, #0f172a);
+  font-family: 'Inter', -apple-system, sans-serif;
+  color: #f8fafc;
+}
+
+.auth-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.auth-card {
+  background: rgba(30, 41, 59, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 2.5rem;
+  border-radius: 1rem;
+  width: 100%;
+  max-width: 380px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.auth-card h2 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  background: linear-gradient(to right, #38bdf8, #818cf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.input-group {
+  margin-bottom: 1rem;
+}
+
+.auth-card input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.5rem;
+  color: white;
+  font-size: 1rem;
+  transition: all 0.2s;
+  box-sizing: border-box;
+}
+
+.auth-card input:focus {
+  outline: none;
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.2);
+}
+
+.auth-card button {
+  width: 100%;
+  padding: 0.75rem;
+  background: #38bdf8;
+  color: #0f172a;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.1s, background 0.2s;
+}
+
+.auth-card button:hover {
+  background: #7dd3fc;
+  transform: translateY(-1px);
+}
+
+.auth-card button:active {
+  transform: translateY(0);
+}
+
+.auth-card p {
+  text-align: center;
+  margin-top: 1.5rem;
+  color: #94a3b8;
+  font-size: 0.875rem;
+}
+
+.auth-card a {
+  color: #38bdf8;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.auth-card a:hover {
+  text-decoration: underline;
+}
